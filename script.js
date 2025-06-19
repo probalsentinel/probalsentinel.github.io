@@ -67,20 +67,26 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
-window.onload = function () {
-  const text = "I’m a passionate B.Sc. student in Advanced Networking & Cybersecurity at Brainware University, with a strong foundation in Linux systems (RHEL, Kali), open-source tools, and network protocols like TCP/IP and VLANs. I have hands-on experience in system configuration, SQL, and Python programming. I'm eager to apply my skills to real-world cybersecurity challenges, strengthen digital defenses, and contribute to threat mitigation strategies.";
+<script>
+  function showAboutMe() {
+    const para = document.getElementById("about-paragraph");
+    const btn = document.querySelector(".reveal-btn");
+    const typingTarget = para.querySelector("p");
+    const text = typingTarget.textContent;
+    typingTarget.textContent = ""; // clear it before typing
+    para.style.display = "block";
+    btn.style.display = "none";
 
-  const typingTarget = document.getElementById("typing-text");
-  let index = 0;
-
-  function typeChar() {
-    if (index < text.length) {
-      typingTarget.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeChar, 15); // typing speed
+    let index = 0;
+    function typeChar() {
+      if (index < text.length) {
+        typingTarget.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeChar, 15);
+      }
     }
+    typeChar();
   }
+</script>
 
-  typeChar(); // start typing
-};
 
