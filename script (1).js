@@ -67,26 +67,19 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
-<script>
-  function showAboutMe() {
-    const para = document.getElementById("about-paragraph");
-    const btn = document.querySelector(".reveal-btn");
-    const typingTarget = para.querySelector("p");
-    const text = typingTarget.textContent;
-    typingTarget.textContent = ""; // clear it before typing
-    para.style.display = "block";
-    btn.style.display = "none";
+window.onload = function () {
+  const text = "I’m a passionate B.Sc. student in Advanced Networking & Cybersecurity at Brainware University, ...";
 
-    let index = 0;
-    function typeChar() {
-      if (index < text.length) {
-        typingTarget.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeChar, 15);
-      }
+  const typingTarget = document.getElementById("typing-text");
+  let index = 0;
+
+  function typeChar() {
+    if (index < text.length) {
+      typingTarget.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeChar, 15); // typing speed
     }
-    typeChar();
   }
-</script>
 
-
+  typeChar(); // start typing
+};
