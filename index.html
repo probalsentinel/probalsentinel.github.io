@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probal Saha | CyberWorld</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <div id="content-particles"></div>
+
+  <div id="main-content">
+    <header class="box cyber-header">
+  <div id="cyber-header-particles"></div>
+  <div class="cyber-header-content">
+  <h1>Probal Saha</h1>
+   <p>Cybersecurity Student | Linux Enthusiast</p>
+</div>
+    </header>
+
+
+    <section id="about" class="box about-box">
+  <div class="about-container">
+    <!-- LEFT: Profile Picture -->
+    <div class="about-image">
+      <img src="images/Owner.png" alt="Probal Saha">
+    </div>
+
+    <!-- RIGHT: Typing Text -->
+    <div class="about-text" id="typing-text">
+      <center><h2><B>About Me.</B></h2></center>
+      <!-- Typing animation will inject content here -->
+    </div>
+  </div>
+</section>
+
+
+
+    <div class="box">
+      <p style="text-align:center;">Know more about me...</p>
+      <div class="tab-menu">
+  <!-- Skills -->
+<button class="tab-btn" onclick="activateTab(this, 'skills')" title="Skills">
+  <div class="emoji-icon">🛠️</div>
+  <span>Skills</span>
+</button>
+
+
+  <!-- Certifications -->
+<button class="tab-btn" onclick="activateTab(this, 'certs')" title="Certifications">
+   <div class="emoji-icon">🏅</div>
+  <span>Certificates</span>
+</button>
+
+  <!-- Education -->
+  <button class="tab-btn" onclick="activateTab(this, 'edu')" title="Education">
+    <div class="emoji-icon">🎓</div>
+    <span>Education</span>
+  </button>
+
+  <!-- Experience -->
+  <button class="tab-btn" onclick="activateTab(this, 'exp')" title="Experience">
+     <div class="emoji-icon">💼</div>
+    <span>Experience</span>
+  </button>
+      </div>
+    </div>
+    
+<!-- Certifications content -->
+<div id="tab-contents">
+  <div class="tab-content box" id="certs" style="display: none;">
+    <h2>My Certifications</h2>
+    <div class="cert-grid">
+
+      <!-- Example Cert -->
+      <div class="cert-card">
+        <img src="images/Certifications/Linux_Unhatched.png" alt="Cisco">
+        <p>Linux Unhatched<br><small>Cisco, 2025</small></p>
+      </div>
+
+      <div class="cert-card">
+        <img src="images/Certifications/Computer_Hardware_Basics.png" alt="Linux">
+        <p>Computer Hardware Basics<br><small>Cisco, 2025</small></p>
+      </div>
+
+      <div class="cert-card">
+        <img src="images/Certifications/Computer_network_fundamentals.png" alt="Python">
+        <p>Computer Network Fundamentals<br><small>Udemy, 2025</small></p>
+      </div>
+
+      <div class="cert-card">
+        <img src="images/Certifications/Linux_Security_Basics.png" alt="Python">
+        <p>Linux Security Basics<br><small>Udemy, 2025</small></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    
+<!-- Education content -->
+<div class="tab-content box" id="edu" style="display: none;">
+  <h2>Education</h2>
+
+  <!-- Current Course -->
+  <div class="edu-block">
+    <h3>🎓 B.Sc. Honours in Advanced Networking & Cybersecurity</h3>
+    <p>Brainware University<br>CGPA:<br>Kolkata<br>2024 – Present</p>
+  </div>
+
+  <!-- Higher Secondary -->
+  <div class="edu-block">
+    <h3>🏫 Higher Secondary</h3>
+    <p>Grade:A+(84%)<br>WBCHSE Board<br>North 24 Parganas<br>Completed in 2024</p>
+  </div>
+</div>
+
+
+    <footer>
+      <br>
+      <br>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: nowrap; margin-bottom: 0.5rem;">
+    <span style="margin-right: 0.5rem;">Contact:</span>
+    <a href="mailto:contact.probalsaha@gmail.com" title="Email">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" width="28" height="28" style="vertical-align: middle;">
+    </a>
+    <a href="https://github.com/probalsentinel" target="_blank" title="GitHub">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" width="28" height="28" style="vertical-align: middle;">
+    </a>
+    <a href="https://www.linkedin.com/in/probalsaha404/" target="_blank" title="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="28" height="28" style="vertical-align: middle;">
+    </a>
+  </div>
+    <center><p>&copy; 2025 Probal Saha. All rights reserved.</p></center>
+</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
