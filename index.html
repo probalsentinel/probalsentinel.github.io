@@ -173,6 +173,7 @@
   function showAboutMe() {
     const para = document.getElementById("about-paragraph");
     const btn = document.querySelector(".reveal-btn");
+    const resumeBtn = document.getElementById("resume-button"); // ✅ Add this line
 
     // Check if paragraph exists
     if (!para) {
@@ -184,20 +185,19 @@
     const text = typingTarget.textContent.trim();
 
     typingTarget.textContent = ""; // Clear text
-    para.style.display = "block";  // Show container
-    btn.style.display = "none";    // Hide button
+    para.style.display = "block";  // Show paragraph
+    btn.style.display = "none";    // Hide review button
 
     let index = 0;
     function typeChar() {
       if (index < text.length) {
         typingTarget.textContent += text.charAt(index);
         index++;
-        setTimeout(typeChar, 15); // Typing speed
+        setTimeout(typeChar, 15);
+      } else {
+        // ✅ Show resume button after typing finishes
+        resumeBtn.style.display = "inline-block";
       }
-      else {
-      // ✅ Show resume button after typing finishes
-      resumeBtn.style.display = "inline-block";
-    }
     }
 
     typeChar();
