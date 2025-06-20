@@ -68,18 +68,18 @@ function activateTab(tabBtn, tabId) {
   }
 }
 window.onload = function () {
-  const text = "I’m a passionate B.Sc. student in Advanced Networking & Cybersecurity at Brainware University, ...";
+  const typingTarget = document.getElementById("type-target");
+  const fullText = typingTarget.textContent;
+  typingTarget.textContent = ""; // clear before typing
 
-  const typingTarget = document.getElementById("typing-text");
   let index = 0;
-
   function typeChar() {
-    if (index < text.length) {
-      typingTarget.textContent += text.charAt(index);
+    if (index < fullText.length) {
+      typingTarget.textContent += fullText.charAt(index);
       index++;
-      setTimeout(typeChar, 15); // typing speed
+      setTimeout(typeChar, 15);
     }
   }
 
-  typeChar(); // start typing
+  typeChar();
 };
