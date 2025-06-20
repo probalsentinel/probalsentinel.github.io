@@ -24,24 +24,24 @@
     </header>
 
 
-   <section id="about" class="box about-box">
+  <section id="about" class="box about-box">
   <div class="about-container">
-    
+
     <!-- LEFT: Profile Picture -->
     <div class="about-image">
       <img src="images/Owner.png" alt="Probal Saha">
     </div>
 
-    <!-- RIGHT: Text + Button -->
+    <!-- RIGHT: Text -->
     <div class="about-text">
-      <h2 class="about-heading" style="margin-bottom: 0.5rem;">About Me.</h2>
+      <h2 class="about-heading">About Me.</h2>
 
-      <!-- Toggle Button -->
+      <!-- Button -->
       <button class="reveal-btn" onclick="showAboutMe()">Click to review...</button>
 
-      <!-- Hidden Paragraph -->
+      <!-- Paragraph -->
       <div id="about-paragraph" style="display: none; margin-top: 0.5rem;">
-        <p style="margin: 0; line-height: 1.5;">
+        <p>
           I’m a passionate B.Sc. student in Advanced Networking & Cybersecurity at Brainware University,
           with a strong foundation in Linux systems (RHEL, Kali), open-source tools, and network protocols like TCP/IP and VLANs.
           I have hands-on experience in system configuration, SQL, and Python programming. I'm eager to apply my skills
@@ -156,5 +156,37 @@
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+  function showAboutMe() {
+    const para = document.getElementById("about-paragraph");
+    const btn = document.querySelector(".reveal-btn");
+
+    // Check if paragraph exists
+    if (!para) {
+      console.error("Paragraph not found!");
+      return;
+    }
+
+    const typingTarget = para.querySelector("p");
+    const text = typingTarget.textContent.trim();
+
+    typingTarget.textContent = ""; // Clear text
+    para.style.display = "block";  // Show container
+    btn.style.display = "none";    // Hide button
+
+    let index = 0;
+    function typeChar() {
+      if (index < text.length) {
+        typingTarget.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeChar, 15); // Typing speed
+      }
+    }
+
+    typeChar();
+  }
+</script>
+
 </body>
 </html>
