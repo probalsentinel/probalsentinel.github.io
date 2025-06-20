@@ -67,19 +67,23 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
+
 window.onload = function () {
-  const typingTarget = document.getElementById("type-target");
-  const fullText = typingTarget.textContent;
-  typingTarget.textContent = ""; // clear before typing
+  const typingTarget = document.getElementById("about-typing");
+  const fullText = typingTarget.innerHTML;
+  typingTarget.innerHTML = ""; // clear before typing
+  typingTarget.style.visibility = "visible";
 
   let index = 0;
+
   function typeChar() {
     if (index < fullText.length) {
-      typingTarget.textContent += fullText.charAt(index);
+      typingTarget.innerHTML += fullText.charAt(index);
       index++;
       setTimeout(typeChar, 15);
     }
   }
 
-  typeChar();
+  // Delay typing until after first paragraph finishes sliding up
+  setTimeout(typeChar, 1200);
 };
