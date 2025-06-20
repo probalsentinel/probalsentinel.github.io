@@ -194,6 +194,10 @@
         index++;
         setTimeout(typeChar, 15); // Typing speed
       }
+      else {
+      // ✅ Show resume button after typing finishes
+      resumeBtn.style.display = "inline-block";
+    }
     }
 
     typeChar();
