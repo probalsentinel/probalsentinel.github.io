@@ -258,7 +258,7 @@ body {
 
 .top-row {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -269,7 +269,7 @@ body {
 }
 
 .about-text {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   text-align: justify;
 }
 
