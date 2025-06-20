@@ -301,3 +301,22 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px #00ff00;
 }
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #00ff00;
+  background-color: black;
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #00ff00;
+  color: black;
+  box-shadow: 0 0 10px #00ff00;
+}
