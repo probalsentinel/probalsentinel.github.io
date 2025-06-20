@@ -227,6 +227,9 @@ body {
   box-shadow: 0 0 10px #00ff00;
   text-align: center;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+
 }
 
 .cert-card img {
@@ -244,6 +247,9 @@ body {
   font-size: 0.9rem;
   color: #fff5e6;
 }
+  text-decoration: none;
+  color: inherit;
+
 
 .edu-block {
   background: rgba(0, 0, 0, 0.4);
