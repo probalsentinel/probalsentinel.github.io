@@ -67,25 +67,4 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
-  function showAboutMe() {
-  const para = document.getElementById("about-paragraph");
-  const btn = document.querySelector(".reveal-btn");
-  const typingTarget = para.querySelector("p");
-
-  const text = typingTarget.textContent.trim(); // optional: clean whitespace
-  typingTarget.textContent = ""; // clear it before typing
-  para.style.display = "block";
-  btn.style.display = "none";
-
-  let index = 0;
-  (function typeChar() {
-    if (index < text.length) {
-      typingTarget.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeChar, 15); // control typing speed
-    }
-  })();
-}
-
-
 
