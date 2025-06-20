@@ -4,7 +4,6 @@ body {
   background-color: #000;
   color: #fff5e6;
 }
-
 #content-particles {
   position: fixed;
   top: 0;
@@ -14,7 +13,6 @@ body {
   background: linear-gradient(to bottom right, #001a00, #003300);
   z-index: -2;
 }
-
 .box {
   background: rgba(60, 30, 10, 0.88);
   border: 2px solid #00ff00;
@@ -28,17 +26,14 @@ body {
   position: relative;
   color: #fff5e6;
 }
-
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-/* Header with cyber background */
 .cyber-header {
   position: relative;
   background: transparent;
@@ -48,8 +43,6 @@ body {
   overflow: hidden;
   height: 200px;
 }
-
-/* Particle background for header */
 #cyber-header-particles {
   position: absolute;
   top: 0;
@@ -58,8 +51,6 @@ body {
   height: 100%;
   z-index: 0;
 }
-
-/* Floating text */
 .cyber-header-content {
   position: relative;
   z-index: 1;
@@ -68,33 +59,27 @@ body {
   color: #00ff00;
   text-shadow: 0 0 10px #00ff00;
 }
-
 .cyber-header-content h1 {
   font-size: 2.5rem;
   margin: 0;
   font-weight: bold;
-
   background: linear-gradient(to right, #00ff99, #00d8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
-
-
 .cyber-header-content p {
   font-size: 1.1rem;
   margin-top: 0.5rem;
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffcc;
 }
-
 .tab-menu {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin: 2rem 0;
 }
-
 .tab-btn {
   width: 70px;
   height: 80px;
@@ -112,17 +97,14 @@ body {
   transition: all 0.3s ease;
   gap: 5px;
 }
-
 .tab-btn img {
   width: 28px;
   height: 28px;
   filter: invert(70%) sepia(100%) saturate(400%) hue-rotate(80deg);
 }
-
 .tab-btn span {
   margin-top: 3px;
 }
-
 .tab-btn:hover,
 .tab-btn.active {
   background-color: #00ff00;
@@ -135,13 +117,10 @@ body {
   color: #000;
   box-shadow: 0 0 10px #00ff00;
 }
-
 .tab-btn:hover img,
 .tab-btn.active img {
   filter: invert(0%) brightness(0) contrast(100%);
 }
-
-
 #main-content {
   opacity: 1;
   transform: translateY(0);
@@ -149,27 +128,23 @@ body {
 .about-box {
   padding: 1rem;
 }
-
 .about-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
 }
-
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
     align-items: center;
   }
-
   .about-image,
   .about-text {
     width: 100%;
     max-width: 300px;
     height: auto;
   }
-
   .about-text {
     text-align: left;
     font-size: 0.95rem;
@@ -178,14 +153,12 @@ body {
     padding: 1rem;
   }
 }
-
 .about-image img {
   max-width: 200px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px #00ff00;
 }
-
 .about-text {
   flex: 1;
   color: #fff5e6;
@@ -217,7 +190,6 @@ body {
   justify-items: center;
   margin-top: 1rem;
 }
-
 .cert-card {
   width: 200px;
   padding: 1rem;
@@ -228,23 +200,19 @@ body {
   text-align: center;
   transition: transform 0.3s ease;
 }
-
 .cert-card img {
   width: 100%;
   height: auto;
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }
-
 .cert-card:hover {
   transform: scale(1.05);
 }
-
 .cert-card p {
   font-size: 0.9rem;
   color: #fff5e6;
 }
-
 .edu-block {
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid #00ff00;
@@ -253,35 +221,71 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 8px #00ff00;
 }
-
 .edu-block h3 {
   margin-bottom: 0.5rem;
   color: #00ffcc;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
 }
-
 .edu-block p {
   color: #fff5e6;
   font-size: 0.9rem;
 }
-/* Slide-up animation */
 .slide-up {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1s ease-out forwards;
   animation-delay: 0.5s;
 }
-
 @keyframes slideUpFade {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-/* Initially hide typing paragraph */
 #about-typing {
   visibility: hidden;
   white-space: pre-wrap;
+}
+
+
+/* ========== ABOUT SECTION STRUCTURE ADJUSTMENT ========== */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.top-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-heading-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.about-text {
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+/* Preserve existing responsive layout */
+@media screen and (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 90%;
+    height: auto;
+  }
+
+  .about-heading {
+    margin-top: 1rem;
+  }
 }
