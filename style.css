@@ -306,11 +306,11 @@ body {
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
-  color: white;
-  background-color: #e60000;
+  color: white !importan;
+  background-color: #e60000 !importan;
   border: none;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
+  border-radius: 30px !importan;
+  font-family: 'Poppins', sans-serif !importan;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -318,7 +318,7 @@ body {
 }
 
 .resume-btn:hover {
-  background-color: #ff1a1a;
-  box-shadow: 0 0 15px #ff3333;
+  background-color: #ff1a1a !importan;
+  box-shadow: 0 0 15px #ff3333 !importan;
   transform: scale(1.05);
 }
