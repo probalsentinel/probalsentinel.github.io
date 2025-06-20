@@ -67,7 +67,6 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
-<script>
   function showAboutMe() {
     const para = document.getElementById("about-paragraph");
     const btn = document.querySelector(".reveal-btn");
@@ -87,6 +86,5 @@ function activateTab(tabBtn, tabId) {
     }
     typeChar();
   }
-</script>
 
 
