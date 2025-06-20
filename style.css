@@ -258,7 +258,7 @@ body {
 
 .top-row {
   display: flex;
-  gap: 0.1rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
