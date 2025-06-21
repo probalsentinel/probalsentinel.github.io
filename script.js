@@ -1,38 +1,3 @@
-particlesJS("particles-js", {
-      particles: {
-        number: { value: 80 },
-        color: { value: "#00ff00" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#00ff00",
-          opacity: 0.4,
-          width: 1
-        },
-        move: { enable: true, speed: 6 }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      },
-      retina_detect: true
-    });
-
-    // Show main content after welcome animation
-    setTimeout(() => {
-      document.getElementById("welcome-screen").style.display = "none";
-      const content = document.getElementById("main-content");
-      content.style.display = "block";
-      void content.offsetWidth;
-      content.style.opacity = 1;
-    }, 5000);
-
-
 particlesJS("content-particles", {
   particles: {
     number: { value: 60 },
@@ -102,3 +67,36 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
+particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00ff00" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00ff00",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 6 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" }
+        }
+      },
+      retina_detect: true
+    });
+
+    // Show main content after welcome animation
+    setTimeout(() => {
+      document.getElementById("welcome-screen").style.display = "none";
+      const content = document.getElementById("main-content");
+      content.style.display = "block";
+      void content.offsetWidth;
+      content.style.opacity = 1;
+    }, 5000);
