@@ -88,6 +88,31 @@ body {
   text-shadow: 0 0 10px #00ffcc;
 }
 
+.Quote-section {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #00ffcc;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  max-width: 800px;
+  background: transparent;
+  z-index: 2;
+  position: relative;
+  animation: floatText 6s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
 .tab-menu {
   display: flex;
   justify-content: center;
