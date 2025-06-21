@@ -333,3 +333,26 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+
+.tryhackme-section {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #00ffcc;
+}
+
+.tryhackme-section p {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.thm-logo {
+  height: 44px;
+  transition: transform 0.3s ease;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.thm-logo:hover {
+  transform: scale(1.05);
+}
