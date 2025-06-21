@@ -322,3 +322,14 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px #00ff00;
 }
+
+#content-particles,
+#cyber-header-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
