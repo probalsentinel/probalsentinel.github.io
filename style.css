@@ -258,6 +258,7 @@ body {
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 8px #00ff00;
+  animation: slideUp 0.8s ease-out;
 }
 
 .edu-block h3 {
@@ -267,10 +268,24 @@ body {
   font-size: 1rem;
 }
 
+.edu-block h4 {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff5e6;
+}
+
 .edu-block p {
+  margin: 0.2rem 0;
   color: #fff5e6;
   font-size: 0.9rem;
 }
+
+.edu-date {
+  color: #ccc;
+  font-style: italic;
+}
+
 .reveal-btn {
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
