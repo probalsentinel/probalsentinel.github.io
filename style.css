@@ -335,24 +335,30 @@ body {
 }
 
 .tryhackme-section {
+  background: rgba(0, 30, 0, 0.6);
+  border: 2px solid #00ff00;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #00ff00;
+  animation: float 4s ease-in-out infinite;
   font-family: 'Poppins', sans-serif;
   color: #00ffcc;
 }
 
 .tryhackme-section p {
-  margin-bottom: 0.6rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
 }
 
-.thm-logo {
-  height: 44px;
+.tryhackme-section .thm-logo {
+  height: 48px;
   transition: transform 0.3s ease;
-  filter: brightness(1.2) contrast(1.1);
+  filter: brightness(1.5) saturate(1.3);
 }
 
-.thm-logo:hover {
-  transform: scale(1.05);
+.tryhackme-section .thm-logo:hover {
+  transform: scale(1.1);
 }
