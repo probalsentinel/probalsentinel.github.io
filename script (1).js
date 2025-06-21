@@ -67,20 +67,3 @@ function activateTab(tabBtn, tabId) {
     selectedContent.style.display = "block";
   }
 }
-
-  const quote = "\"Cybersecurity is not just a skill, it's a mindset.\"";
-  const quoteTarget = document.getElementById("typed-quote");
-  const cursor = document.getElementById("cursor");
-  let index = 0;
-
-  function typeQuote() {
-    if (index < quote.length) {
-      quoteTarget.textContent += quote.charAt(index);
-      index++;
-      setTimeout(typeQuote, 20); // Typing speed
-    } else {
-      cursor.style.display = "none"; // ✅ Hide cursor after typing completes
-    }
-  }
-
-  window.onload = typeQuote;
