@@ -461,7 +461,6 @@ body {
   border: 2px solid #00ff00;
   border-radius: 8px;
   box-shadow: 0 0 10px #00ff00;
-  box-sizing: border-box;
   text-align: center;
   transition: transform 0.3s ease;
   text-decoration: none; /* ✅ remove underline from <a> */
@@ -483,20 +482,6 @@ body {
   font-size: 0.9rem;
   color: #fff5e6;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
-     gap: 0.75rem;
-    padding: 0 1rem; /* optional: side padding */
-  }
-  .cert_card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
 }
 
 .edu-block {
