@@ -484,6 +484,13 @@ body {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+  }
+}
+
 .edu-block {
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid #00ff00;
@@ -579,10 +586,4 @@ body {
   animation: float 4s ease-in-out infinite;
   font-family: 'Poppins', sans-serif;
   color: #00ffcc;
-}
-
-@media (max-width: 768px) {
-  .cert-grid, .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
-  }
 }
