@@ -49,79 +49,42 @@ particlesJS("cyber-header-particles", {
   retina_detect: true
 });
 
-let certDataLoaded = false;
-
 function activateTab(tabBtn, tabId) {
+  // Remove active state from all buttons
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+  // Add active state to clicked button
   tabBtn.classList.add('active');
 
-  document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+  // Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.style.display = "none";
+  });
 
-  const selected = document.getElementById(tabId);
-  if (selected) selected.style.display = 'block';
-
-  // Load certifications only once
-  if (tabId === "certs" && !certDataLoaded) {
-    loadCertificationsByCategory();
-    certDataLoaded = true;
-  }
+  // Show the selected tab content
+  const selectedContent = document.getElementById(tabId);
+  if (selectedContent) {
+    selectedContent.style.display = "block";
+  }
 }
 
-function loadCertificationsByCategory() {
-  fetch('certifications.json')
+fetch('certifications.json')
     .then(response => response.json())
-    .then(certifications => {
+    .then(data => {
       const grid = document.getElementById("certGrid");
-      const buttonContainer = document.getElementById("cert-category-buttons");
-
-      // Extract unique categories
-      const categories = [...new Set(certifications.map(cert => cert.category))];
-      categories.unshift("All");
-
-      // Create buttons
-      categories.forEach(category => {
-        const btn = document.createElement("button");
-        btn.textContent = category;
-        btn.className = "filter-btn";
-        btn.setAttribute("data-category", category);
-        if (category === "All") btn.classList.add("active");
-        buttonContainer.appendChild(btn);
-      });
-
-      // Function to show filtered certifications
-      function renderCerts(category) {
-        grid.innerHTML = "";
-        const filtered = category === "All"
-          ? certifications
-          : certifications.filter(cert => cert.category === category);
-
-        filtered.forEach(cert => {
-          const card = document.createElement("a");
-          card.className = "cert-card";
-          card.href = cert.link;
-          card.target = "_blank";
-          card.innerHTML = `
-            <img src="${cert.image}" alt="${cert.title}">
-            <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
-          `;
-          grid.appendChild(card);
-        });
-      }
-
-      renderCerts("All");
-
-      // Button click handler
-      buttonContainer.addEventListener("click", e => {
-        if (e.target.tagName === "BUTTON") {
-          const selectedCategory = e.target.getAttribute("data-category");
-          document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-          e.target.classList.add("active");
-          renderCerts(selectedCategory);
-        }
+      data.forEach(cert => {
+        const card = document.createElement("a");
+        card.className = "cert-card";
+        card.href = cert.link;
+        card.target = "_blank";
+        card.innerHTML = 
+          <img src="${cert.image}" alt="${cert.title}">
+          <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
+        ;
+        grid.appendChild(card);
       });
     })
     .catch(error => console.error("Failed to load certifications:", error));
-}
 
 // MATRIX ANIMATION
 const canvas = document.getElementById("matrix-canvas");
