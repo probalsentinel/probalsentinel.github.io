@@ -64,8 +64,8 @@ function activateTab(tabBtn, tabId) {
   // Show the selected tab content
   const selectedContent = document.getElementById(tabId);
   if (selectedContent) {
-    selectedContent.style.display = "block";
-  }
+    selectedContent.style.display = "block";
+  }
 }
 
 fetch('certifications.json')
@@ -77,10 +77,10 @@ fetch('certifications.json')
         card.className = "cert-card";
         card.href = cert.link;
         card.target = "_blank";
-        card.innerHTML = 
+        card.innerHTML = `
           <img src="${cert.image}" alt="${cert.title}">
           <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
-        ;
+        `;
         grid.appendChild(card);
       });
     })
