@@ -68,23 +68,68 @@ function activateTab(tabBtn, tabId) {
   }
 }
 
-fetch('certifications.json')
+let certDataLoaded = false;
+
+function loadCertifications() {
+  fetch('certifications.json')
     .then(response => response.json())
     .then(data => {
       const grid = document.getElementById("certGrid");
-      data.forEach(cert => {
-        const card = document.createElement("a");
-        card.className = "cert-card";
-        card.href = cert.link;
-        card.target = "_blank";
-        card.innerHTML = `
-          <img src="${cert.image}" alt="${cert.title}">
-          <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
-        `;
-        grid.appendChild(card);
+      const buttonContainer = document.getElementById("cert-category-buttons");
+
+      // Unique categories
+      const categories = [...new Set(data.map(cert => cert.category))];
+      categories.unshift("All");
+
+      // Create filter buttons
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "filter-btn";
+        btn.textContent = cat;
+        btn.setAttribute("data-category", cat);
+        buttonContainer.appendChild(btn);
+      });
+
+      function render(category) {
+        grid.innerHTML = "";
+        const filtered = category === "All" ? data : data.filter(cert => cert.category === category);
+
+        filtered.forEach(cert => {
+          const card = document.createElement("a");
+          card.className = "cert-card";
+          card.href = cert.link;
+          card.target = "_blank";
+          card.innerHTML = `
+            <img src="${cert.image}" alt="${cert.title}">
+            <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      // First load
+      render("All");
+
+      // Add click behavior
+      buttonContainer.addEventListener("click", e => {
+        if (e.target.tagName === "BUTTON") {
+          document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+          e.target.classList.add("active");
+          const cat = e.target.getAttribute("data-category");
+          render(cat);
+        }
       });
     })
     .catch(error => console.error("Failed to load certifications:", error));
+}
+
+// Load on tab click
+document.querySelector('[data-target="certs"]').addEventListener("click", () => {
+  if (!certDataLoaded) {
+    loadCertifications();
+    certDataLoaded = true;
+  }
+});
 
 // MATRIX ANIMATION
 const canvas = document.getElementById("matrix-canvas");
