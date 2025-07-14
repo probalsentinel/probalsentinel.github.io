@@ -484,6 +484,30 @@ body {
   margin: 0;
 }
 
+.cert-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.cert-buttons button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #00ff00;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cert-buttons button.active,
+.cert-buttons button:hover {
+  background-color: #00ff00;
+  color: black;
+}
+
 .edu-block {
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid #00ff00;
