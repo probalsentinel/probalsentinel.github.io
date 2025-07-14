@@ -49,24 +49,6 @@ particlesJS("cyber-header-particles", {
   retina_detect: true
 });
 
-function activateTab(tabBtn, tabId) {
-  // Remove active state from all buttons
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-
-  // Add active state to clicked button
-  tabBtn.classList.add('active');
-
-  // Hide all tab contents
-  document.querySelectorAll('.tab-content').forEach(content => {
-    content.style.display = "none";
-  });
-
-  // Show the selected tab content
-  const selectedContent = document.getElementById(tabId);
-  if (selectedContent) {
-    selectedContent.style.display = "block";
-  }
-}
 
 let certDataLoaded = false;
 
