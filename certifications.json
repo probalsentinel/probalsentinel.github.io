@@ -5,7 +5,6 @@
     "date": "Apr 2025",
     "image": "images/Certifications/Linux_Unhatched.png",
     "link": "https://www.credly.com/badges/b6b63c7b-3d8b-47c0-a0ed-a87d225a126d/public_url"
-    "category": "Cisco"
   },
   {
     "title": "Computer Hardware Basics",
@@ -13,7 +12,6 @@
     "date": "Mar 2025",
     "image": "images/Certifications/Computer_Hardware_Basics.png",
     "link": "https://www.credly.com/badges/cca2a42b-bed0-4946-9047-d27d1e045aee/public_url"
-    "category": "Cisco"
   },
   {
     "title": "Computer Network Fundamentals",
@@ -21,7 +19,6 @@
     "date": "May 2025",
     "image": "images/Certifications/Computer_network_fundamentals.png",
     "link": "https://www.udemy.com/certificate/UC-c479e9f2-8134-47cf-a423-0c87577c03f8/"
-    "category": "Udemy"
   },
   {
     "title": "Linux Security Basics",
@@ -29,6 +26,5 @@
     "date": "May 2025",
     "image": "images/Certifications/Linux_Security_Basics.png",
     "link": "https://www.udemy.com/certificate/UC-0fb2b815-2961-473c-8ed6-393b6933253f/"
-    "category": "Udemy"
   }
 ]
