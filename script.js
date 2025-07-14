@@ -49,22 +49,17 @@ particlesJS("cyber-header-particles", {
   retina_detect: true
 });
 
-
 let certDataLoaded = false;
 
 function activateTab(tabBtn, tabId) {
-  // Handle tab button state
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
   tabBtn.classList.add('active');
 
-  // Hide all tab content
   document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
 
-  // Show selected tab
   const selected = document.getElementById(tabId);
   if (selected) selected.style.display = 'block';
 
-  // Load certifications only once when the "certs" tab is activated
   if (tabId === "certs" && !certDataLoaded) {
     loadCertificationsByCategory();
     certDataLoaded = true;
@@ -78,11 +73,9 @@ function loadCertificationsByCategory() {
       const grid = document.getElementById("certGrid");
       const buttonContainer = document.getElementById("cert-category-buttons");
 
-      // Get unique categories
       const categories = [...new Set(certifications.map(cert => cert.category))];
       categories.unshift("All");
 
-      // Create category buttons
       categories.forEach(category => {
         const btn = document.createElement("button");
         btn.textContent = category;
@@ -92,7 +85,6 @@ function loadCertificationsByCategory() {
         buttonContainer.appendChild(btn);
       });
 
-      // Render certs by category
       function renderCerts(category) {
         grid.innerHTML = "";
         const filtered = category === "All"
@@ -112,11 +104,9 @@ function loadCertificationsByCategory() {
         });
       }
 
-      // Initial render
       renderCerts("All");
 
-      // Button click handler
-      buttonContainer.addEventListener("click", (e) => {
+      buttonContainer.addEventListener("click", e => {
         if (e.target.tagName === "BUTTON") {
           const selectedCategory = e.target.getAttribute("data-category");
           document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
