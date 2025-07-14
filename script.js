@@ -68,24 +68,6 @@ function activateTab(tabBtn, tabId) {
   }
 }
 
-fetch('certifications.json')
-    .then(response => response.json())
-    .then(data => {
-      const grid = document.getElementById("certGrid");
-      data.forEach(cert => {
-        const card = document.createElement("a");
-        card.className = "cert-card";
-        card.href = cert.link;
-        card.target = "_blank";
-        card.innerHTML = `
-          <img src="${cert.image}" alt="${cert.title}">
-          <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
-        `;
-        grid.appendChild(card);
-      });
-    })
-    .catch(error => console.error("Failed to load certifications:", error));
-
 // MATRIX ANIMATION
 const canvas = document.getElementById("matrix-canvas");
 const ctx = canvas.getContext("2d");
