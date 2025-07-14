@@ -60,6 +60,7 @@ function activateTab(tabBtn, tabId) {
   const selected = document.getElementById(tabId);
   if (selected) selected.style.display = 'block';
 
+  // Load certifications only once
   if (tabId === "certs" && !certDataLoaded) {
     loadCertificationsByCategory();
     certDataLoaded = true;
@@ -68,14 +69,16 @@ function activateTab(tabBtn, tabId) {
 
 function loadCertificationsByCategory() {
   fetch('certifications.json')
-    .then(res => res.json())
+    .then(response => response.json())
     .then(certifications => {
       const grid = document.getElementById("certGrid");
       const buttonContainer = document.getElementById("cert-category-buttons");
 
+      // Extract unique categories
       const categories = [...new Set(certifications.map(cert => cert.category))];
       categories.unshift("All");
 
+      // Create buttons
       categories.forEach(category => {
         const btn = document.createElement("button");
         btn.textContent = category;
@@ -85,6 +88,7 @@ function loadCertificationsByCategory() {
         buttonContainer.appendChild(btn);
       });
 
+      // Function to show filtered certifications
       function renderCerts(category) {
         grid.innerHTML = "";
         const filtered = category === "All"
@@ -106,6 +110,7 @@ function loadCertificationsByCategory() {
 
       renderCerts("All");
 
+      // Button click handler
       buttonContainer.addEventListener("click", e => {
         if (e.target.tagName === "BUTTON") {
           const selectedCategory = e.target.getAttribute("data-category");
@@ -115,7 +120,7 @@ function loadCertificationsByCategory() {
         }
       });
     })
-    .catch(err => console.error("Failed to load certifications:", err));
+    .catch(error => console.error("Failed to load certifications:", error));
 }
 
 // MATRIX ANIMATION
