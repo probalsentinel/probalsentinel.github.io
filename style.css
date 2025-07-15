@@ -580,3 +580,35 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #00ffcc;
 }
+
+.update-card {
+  background: rgba(20, 20, 20, 0.6);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px #00ff00;
+  transition: transform 0.3s ease;
+}
+
+.update-card:hover {
+  transform: scale(1.02);
+}
+
+.update-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #00ff00;
+}
+
+.update-card small {
+  display: block;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.update-card p {
+  color: #fff5e6;
+  font-size: 0.95rem;
+  margin: 0;
+}
