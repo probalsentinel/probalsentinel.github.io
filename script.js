@@ -225,20 +225,20 @@ fetch('skills.json')
   });
 
   fetch('latestUpdates.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('latest-updates-container');
-      data.forEach(update => {
-        const updateItem = document.createElement('div');
-        updateItem.className = 'update-card';
-        updateItem.innerHTML = `
-          <h3>${update.title}</h3>
-          <small>${update.date}</small>
-          <p>${update.description}</p>
-        `;
-        container.appendChild(updateItem);
-      });
-    })
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("latestUpdatesGrid");
+    data.forEach(update => {
+      const div = document.createElement("div");
+      div.className = "latest-update";
+      div.innerHTML = `
+        <h4>${update.title}</h4>
+        <p class="date">${update.date}</p>
+        <p>${update.description}</p>
+      `;
+      container.appendChild(div);
+    });
+  });
     .catch(error => console.error("Failed to load updates:", error));
 
 fetch('certifications.json')
