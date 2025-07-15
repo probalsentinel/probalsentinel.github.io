@@ -223,3 +223,38 @@ fetch('skills.json')
       grid.appendChild(card);
     });
   });
+
+  fetch('latestUpdates.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('latest-updates-container');
+      data.forEach(update => {
+        const updateItem = document.createElement('div');
+        updateItem.className = 'update-card';
+        updateItem.innerHTML = `
+          <h3>${update.title}</h3>
+          <small>${update.date}</small>
+          <p>${update.description}</p>
+        `;
+        container.appendChild(updateItem);
+      });
+    })
+    .catch(error => console.error("Failed to load updates:", error));
+
+fetch('certifications.json')
+    .then(response => response.json())
+    .then(data => {
+      const grid = document.getElementById("certGrid");
+      data.forEach(cert => {
+        const card = document.createElement("a");
+        card.className = "cert-card";
+        card.href = cert.link;
+        card.target = "_blank";
+        card.innerHTML = `
+          <img src="${cert.image}" alt="${cert.title}">
+          <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
+        `;
+        grid.appendChild(card);
+      });
+    })
+    .catch(error => console.error("Failed to load certifications:", error));
