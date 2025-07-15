@@ -239,8 +239,7 @@ fetch('skills.json')
       container.appendChild(div);
     });
   });
-    .catch(error => console.error("Failed to load updates:", error));
-
+    
 fetch('certifications.json')
     .then(response => response.json())
     .then(data => {
