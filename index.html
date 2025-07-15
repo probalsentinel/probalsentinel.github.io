@@ -138,7 +138,7 @@
 <!------------------------------------------------------------------ Certifications content ----------------------------------------------------------------------->
 <div id="tab-contents">
   <div class="tab-content box" id="certs" style="display: none;">
-    <h2><center><u>My Certifications</u></center><br></h2>
+    <h2><center><u>My Certifications</u></center></h2>
    <div class="cert-grid" id="certGrid"></div>
   </div>
 </div>
@@ -173,6 +173,12 @@
   <div class="info-message">
     I’m currently a student and may not have professional experience yet, but I’m building a solid technical foundation through labs, coursework, and continuous self-learning. I’m actively looking forward to my first opportunity in cybersecurity
   </div>
+</div>
+
+
+ <div class="box latestupadate-section">
+  <h2><center><u>Latest Updates</u></center></h2>
+  <div id="latest-updates-container"></div>
 </div>
 
 
@@ -211,9 +217,8 @@
   function showAboutMe() {
     const para = document.getElementById("about-paragraph");
     const btn = document.querySelector(".reveal-btn");
-    const resumeBtn = document.getElementById("resume-button"); // ✅ Add this line
+    const resumeBtn = document.getElementById("resume-button");
 
-    // Check if paragraph exists
     if (!para) {
       console.error("Paragraph not found!");
       return;
@@ -222,9 +227,9 @@
     const typingTarget = para.querySelector("p");
     const text = typingTarget.textContent.trim();
 
-    typingTarget.textContent = ""; // Clear text
-    para.style.display = "block";  // Show paragraph
-    btn.style.display = "none";    // Hide review button
+    typingTarget.textContent = "";
+    para.style.display = "block";
+    btn.style.display = "none";
 
     let index = 0;
     function typeChar() {
@@ -233,33 +238,13 @@
         index++;
         setTimeout(typeChar, 10);
       } else {
-        // ✅ Show resume button after typing finishes
+      
         resumeBtn.style.display = "inline-block";
       }
     }
 
     typeChar();
   }
-</script>
-
-<script>
-  fetch('certifications.json')
-    .then(response => response.json())
-    .then(data => {
-      const grid = document.getElementById("certGrid");
-      data.forEach(cert => {
-        const card = document.createElement("a");
-        card.className = "cert-card";
-        card.href = cert.link;
-        card.target = "_blank";
-        card.innerHTML = `
-          <img src="${cert.image}" alt="${cert.title}">
-          <p>${cert.title}<br><small>${cert.issuer}, ${cert.date}</small></p>
-        `;
-        grid.appendChild(card);
-      });
-    })
-    .catch(error => console.error("Failed to load certifications:", error));
 </script>
 
 <!-- Button to redirect google drive resume(Style) -->
